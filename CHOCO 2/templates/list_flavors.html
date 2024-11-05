@@ -1,0 +1,36 @@
+<!-- templates/list_flavors.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>List Seasonal Flavors</title>
+</head>
+<body>
+    <h1>Seasonal Flavors</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Flavor ID</th>
+                <th>Flavor Name</th>
+                <th>Season</th>
+                <th>Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flavor in flavors %}
+            <tr>
+                <td>{{ flavor[0] }}</td>
+                <td>{{ flavor[1] }}</td>
+                <td>{{ flavor[2] }}</td>
+                <td>{{ 'Yes' if flavor[3] else 'No' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('index') }}">Go back to home</a>
+</body>
+</html>

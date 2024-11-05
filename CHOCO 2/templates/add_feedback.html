@@ -1,0 +1,25 @@
+<!-- templates/add_feedback.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Add Customer Feedback</h1>
+    <form method="POST">
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" name="customer_name" required><br><br>
+        <label for="flavor_suggestion">Flavor Suggestion (optional):</label>
+        <input type="text" name="flavor_suggestion"><br><br>
+        <label for="allergy_concerns">Allergy Concerns (optional):</label>
+        <input type="text" name="allergy_concerns"><br><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <br>
+    <a href="{{ url_for('list_feedback_route') }}">Go back to list of feedback</a>
+</body>
+</html>

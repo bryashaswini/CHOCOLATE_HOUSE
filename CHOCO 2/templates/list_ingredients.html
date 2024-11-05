@@ -1,0 +1,36 @@
+<!-- templates/list_ingredients.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>List Ingredients</title>
+</head>
+<body>
+    <h1>Ingredients</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ingredient ID</th>
+                <th>Ingredient Name</th>
+                <th>Stock Quantity</th>
+                <th>Allergens</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ingredient in ingredients %}
+            <tr>
+                <td>{{ ingredient[0] }}</td>
+                <td>{{ ingredient[1] }}</td>
+                <td>{{ ingredient[2] }}</td>
+                <td>{{ ingredient[3] if ingredient[3] else 'None' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('index') }}">Go back to home</a>
+</body>
+</html>

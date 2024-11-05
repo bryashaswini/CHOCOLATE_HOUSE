@@ -1,0 +1,25 @@
+<!-- templates/add_flavor.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Add Seasonal Flavor</title>
+</head>
+<body>
+    <h1>Add Seasonal Flavor</h1>
+    <form method="POST">
+        <label for="flavor_name">Flavor Name:</label>
+        <input type="text" name="flavor_name" required><br><br>
+        <label for="season">Season:</label>
+        <input type="text" name="season" required><br><br>
+        <label for="available">Available:</label>
+        <input type="checkbox" name="available"><br><br>
+        <button type="submit">Add Flavor</button>
+    </form>
+    <br>
+    <a href="{{ url_for('list_flavors_route') }}">Go back to list of flavors</a>
+</body>
+</html>

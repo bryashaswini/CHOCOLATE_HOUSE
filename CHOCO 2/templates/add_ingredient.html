@@ -1,0 +1,25 @@
+<!-- templates/add_ingredient.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Ingredient</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Add Ingredient</h1>
+    <form method="POST">
+        <label for="ingredient_name">Ingredient Name:</label>
+        <input type="text" name="ingredient_name" required><br><br>
+        <label for="stock_quantity">Stock Quantity:</label>
+        <input type="number" name="stock_quantity" required><br><br>
+        <label for="allergens">Allergens (optional):</label>
+        <input type="text" name="allergens"><br><br>
+        <button type="submit">Add Ingredient</button>
+    </form>
+    <br>
+    <a href="{{ url_for('list_ingredients_route') }}">Go back to list of ingredients</a>
+</body>
+</html>
